@@ -1,0 +1,4 @@
+rewriteEngine on
+rewriteCond %{SCRIPT_FILENAME} !-f
+rewriteCond %{SCRIPT_FILENAME} !-d
+rewriteRule ^(.*)$ index.php
