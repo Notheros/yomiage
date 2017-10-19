@@ -1,28 +1,17 @@
 <?php
-
-$oJisho = new Jisho();
-$start = strtotime(date('Y-m-d H:i:s'));
-$allcompoundverbs = Japanese::gen_verbs_inflections($oJisho->get_all_compound_verbs());
-$allverbs = Japanese::gen_verbs_inflections($oJisho->get_all_verbs());
-
-$alladjs = Japanese::gen_adjs_inflections($oJisho->get_all_adjectives());
-$alljukugos = $oJisho->get_all_jukugos();
-$allnouns = $oJisho->get_all_nouns();
 $text = $_POST['text'];
+$oJisho = new Jisho();
+$oDict = new JAPANESE($text);
+$start = strtotime(date('Y-m-d H:i:s'));
 
+$all_words = $oJisho->get_words();
 /**
  * nai está conjugando o verbo 1706
  */
-
-Japanese::preg_replace_jukugos($alljukugos, $text);
-
-Japanese::preg_replace_nouns($allnouns, $text);
-Japanese::preg_replace_verbs($allcompoundverbs, $text);
-
-Japanese::preg_replace_verbs($allverbs, $text);
-Japanese::preg_replace_adjs($alladjs, $text);
+$oDict->analyse($all_words);
 
 
+$text = $oDict->place_words();
 $finish = strtotime(date('Y-m-d H:i:s'));
 echo $finish - $start . " segundos" . "<br><br>";
 echo $text;

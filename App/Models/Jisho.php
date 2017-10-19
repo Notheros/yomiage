@@ -18,11 +18,55 @@ class Jisho {
         return $inflections;
     }
 
-    function get_all_jukugos() {
+    function get_words() {
         $query = "
-            SELECT id, kanji, jukugo, meanings, plain, type FROM tb_jukugo GROUP BY jukugo             
-            ORDER BY LENGTH(jukugo) DESC
+            
+(
+	SELECT
+		id,
+		jukugo AS word,
+		meanings,
+		plain,
+		type,
+		'jukugo' AS ctg
+	FROM
+		tb_jukugo
+	GROUP BY
+		jukugo
+)
+UNION 
+	(SELECT id, okurigana AS word, meanings, plain, type, 'word' AS ctg FROM tb_words)
 
+
+UNION
+(
+SELECT 
+               id,
+                okurigana AS word,
+                meanings,
+								plain,
+							type,
+							'adj' AS ctg
+            FROM tb_adjectives
+                )
+
+                UNION
+                (
+                SELECT
+                                id,
+                                okurigana AS word, 
+                                                meanings,
+
+                                plain,
+                type,
+                'verb' AS ctg
+                            FROM tb_verbs 
+                            WHERE (type = 'v1' OR type = 'v5' OR type = 'vsi')
+                            GROUP BY tb_verbs.id
+                )
+
+                ORDER BY
+	LENGTH(word) DESC
         ";
         $this->conn->executeQuery($query);
         $jukugos = $this->conn->getArrayFromResult();

@@ -1,13 +1,6 @@
-
-<style>
-/*    body{
-        background: black;
-    }*/
-</style>
 <div class="container-fluid">
 
 
-    <!--TEXTO ALEATORIO-->
     <div id="start" class="col-md-8 col-md-offset-2">
         <!--<div class="jumbotron">-->
         <h1><small>Easier to read and study Japanese</small></h1>
@@ -42,7 +35,6 @@ BTC：ビットコイン販売所の仲値
 ETH：Lightning ETH/BTC の最終取引価格 × ビットコイン販売所の仲値
  
 当社では、これらの対応を図ることにより仮想通貨取引市場の健全な発展に貢献して参ります。ご不便をおかけしますが、今後とも皆様に安心してお取引いただける環境の構築に努めますので、引き続きよろしくお願いいたします。</textarea>
-
         <br>
 
         <p><a id="start_reading" class="btn btn-block btn-default btn-lg pull-right">Start my reading</a></p>
