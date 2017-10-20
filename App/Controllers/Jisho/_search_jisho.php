@@ -15,12 +15,14 @@ foreach ($data as $key => $value) {
 
     $meanings = "";
     $types = "";
+   
     foreach ($senses as $key => $sense) {
+      
         $kana_alone = 0;
         $meanings .= addslashes(implode(",", $sense['english_definitions'])) . ";";
         $types .= addslashes(implode(",", $sense['parts_of_speech'])) . ";";
         $tags .= addslashes(implode(",", $sense['tags'])) . ";";
-        if (strpos($tags, 'Usually written using kana alone') !== false) {
+        if (strpos($tags, 'kana alone') !== false) {
             $kana_alone = 1;
         }
     }
@@ -42,7 +44,7 @@ foreach ($data as $key => $value) {
             $kanji = mb_substr($okurigana, 0, 1);
             $oJisho->insert_jukugo($kanji, $okurigana, $plain, $types, $meanings, $is_common);
         } else {
-            $new_id = $oJisho->insert_noun($okurigana, $plain, $types, $meanings, $is_common);
+            $new_id = $oJisho->insert_noun($okurigana, $plain, $types, $meanings, $is_common,$kana_alone);
         }
     }
 }

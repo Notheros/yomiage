@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-10-19 01:02:01
+Date: 2017-10-19 23:28:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -16961,7 +16961,7 @@ CREATE TABLE `tb_verbs` (
   `kana_alone` tinyint(1) DEFAULT '0',
   `verb_expression` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1724 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1725 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_verbs
@@ -18668,6 +18668,7 @@ INSERT INTO `tb_verbs` VALUES ('1720', '嫌いが在る', 'Expression', 'きら�
 INSERT INTO `tb_verbs` VALUES ('1721', '大好きになる', 'Expression', 'だいすきになる', '0', 'Godan verb with ru ending', '0', 'to come to like a lot,to fall in love;', '0', null);
 INSERT INTO `tb_verbs` VALUES ('1722', '足す', 'Godan verb with su ending', 'たす', '1', 'Transitive verb', '0', 'to add (numbers);to add (something),to top up (with something);to take care of (e.g. one\'s business);', '0', null);
 INSERT INTO `tb_verbs` VALUES ('1723', '足る', 'Godan verb with ru ending', 'たる', '1', 'intransitive verb', '0', 'to be sufficient,to be enough,to be worthy of;', '0', null);
+INSERT INTO `tb_verbs` VALUES ('1724', '借る', 'Godan verb with ru ending', 'かる', '0', 'Transitive verb', '0', 'to borrow,to have a loan;to rent,to hire;', '0', null);
 
 -- ----------------------------
 -- Table structure for tb_words
@@ -18682,7 +18683,7 @@ CREATE TABLE `tb_words` (
   `meanings` text,
   `kana_alone` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=408 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=416 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_words
@@ -18783,7 +18784,7 @@ INSERT INTO `tb_words` VALUES ('111', '何時もながら', 'いつもながら'
 INSERT INTO `tb_words` VALUES ('112', '何時もの', 'いつもの', 'Expression;;;;;', '0', 'usual,habitual;;;;;', '1');
 INSERT INTO `tb_words` VALUES ('113', 'いつもいつも', 'いつもいつも', 'Expression;', '0', 'year in, year out,24-7;', '1');
 INSERT INTO `tb_words` VALUES ('114', 'いつも2人で', '', 'Wikipedia definition;', '0', 'Two for the Road (1967 film);', '1');
-INSERT INTO `tb_words` VALUES ('115', '有難うございます', 'ありがとうございます', 'Expression;;;;;;;', '1', 'thank you;;;;;;;', '0');
+INSERT INTO `tb_words` VALUES ('115', '有難うございます', 'ありがとうございます', 'Expression;;;;;;;', '1', 'thank you;', '1');
 INSERT INTO `tb_words` VALUES ('116', '為に', 'ために', 'Conjunction;;;;', '1', 'for,for the sake of,to one\'s advantage,in favor of,in favour of,on behalf of;because of,as a result of;;;', '0');
 INSERT INTO `tb_words` VALUES ('117', 'に就いて', 'について', 'Expression;;;;;', '1', 'concerning,regarding;per (e.g. 100 yen per person),for every;;;;', '0');
 INSERT INTO `tb_words` VALUES ('118', 'に於いて', 'において', 'Expression;;;', '1', 'in,on,at (place),as for,regarding;;;', '0');
@@ -19058,3 +19059,8 @@ INSERT INTO `tb_words` VALUES ('404', '誰も寝てはならぬ', '', 'Wikipedia
 INSERT INTO `tb_words` VALUES ('405', '誰も知らない', '', 'Wikipedia definition;', '0', 'Nobody Knows (2004 film);', '0');
 INSERT INTO `tb_words` VALUES ('406', '足りる', 'たりる', 'Ichidan verb,intransitive', '1', 'to be sufficient,to be enough;to be worth doing,to be worthy;to be sufficient,to answer,to do;', '0');
 INSERT INTO `tb_words` VALUES ('407', '足し算', 'たしざん', 'Noun;', '1', 'addition;', '0');
+INSERT INTO `tb_words` VALUES ('411', 'に就いて', 'について', 'Expression;;', '1', 'concerning,regarding;per (e.g. 100 yen per person),for every;', '1');
+INSERT INTO `tb_words` VALUES ('412', '又は', 'または', 'Conjunction,Expression;', '1', 'or,otherwise;', '1');
+INSERT INTO `tb_words` VALUES ('413', 'マタハラ', 'マタハラ', 'Noun;', '0', 'pregnancy discrimination,workplace discrimination against pregnant women,dismissing an employee because they are pregnant;', '1');
+INSERT INTO `tb_words` VALUES ('414', 'マタハウ空港', '', 'Wikipedia definition;', '0', 'Mau Hau Airport;', '1');
+INSERT INTO `tb_words` VALUES ('415', 'マタハリ百貨店', '', 'Wikipedia definition;', '0', 'Matahari (department store);', '1');

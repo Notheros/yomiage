@@ -35,7 +35,7 @@ class Jisho {
 		jukugo
 )
 UNION 
-	(SELECT id, okurigana AS word, meanings, plain, type, 'word' AS ctg FROM tb_words)
+	(SELECT id, if(kana_alone = 0, okurigana, plain) AS word, meanings, plain, type, 'word' AS ctg FROM tb_words)
 
 
 UNION
@@ -177,8 +177,8 @@ SELECT
         $this->conn->executeQuery($query);
     }
 
-    function insert_noun($okurigana, $plain, $type, $meanings, $is_common) {
-        $query = "INSERT INTO tb_words (okurigana, plain, type, meanings, is_common) VALUES('{$okurigana}', '{$plain}', '{$type}', '{$meanings}','{$is_common}')";
+    function insert_noun($okurigana, $plain, $type, $meanings, $is_common, $kana_alone) {
+        $query = "INSERT INTO tb_words (okurigana, plain, type, meanings, is_common, kana_alone) VALUES('{$okurigana}', '{$plain}', '{$type}', '{$meanings}','{$is_common}', '{$kana_alone}')";
         $this->conn->executeQuery($query);
         return $this->conn->lastId();
     }

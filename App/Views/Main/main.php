@@ -3,8 +3,7 @@
 
     <div id="start" class="col-md-8 col-md-offset-2">
         <!--<div class="jumbotron">-->
-        <h1><small>Easier to read and study Japanese</small></h1>
-        <p><small>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</small></p>
+        <h1><small>Prototype</small></h1>
         <textarea class="form-control" rows="8" >いつも bitFlyer をご利用いただきありがとうございます。
  
 昨今の仮想通貨に関連した金融機関等のお取引において、仮名取引・借名取引(※1)等の違法行為や不公正取引等が発生しております。当社では、皆様に安心してお取引いただくために、仮名・借名取引等の違法行為や不公正取引等の有無について日々のお取引やご注文を調査しています。違法行為や不公正取引等に関与した、またはその恐れがあると思われるお客さまには当社より事情のご確認、またはアカウント閉鎖、もしくはお取引制限等を実施させていただいております。
@@ -37,11 +36,11 @@ ETH：Lightning ETH/BTC の最終取引価格 × ビットコイン販売所の�
 当社では、これらの対応を図ることにより仮想通貨取引市場の健全な発展に貢献して参ります。ご不便をおかけしますが、今後とも皆様に安心してお取引いただける環境の構築に努めますので、引き続きよろしくお願いいたします。</textarea>
         <br>
 
-        <p><a id="start_reading" class="btn btn-block btn-default btn-lg pull-right">Start my reading</a></p>
+        <p><a id="start_reading" class="btn btn-block btn-success btn-lg pull-right">Start</a></p>
 
         <!--</div>-->
     </div>
-    <div  class="col-md-12" style="">
+    <div  class="col-md-10 col-md-offset-1" style="">
         <br><br>
         <div id="jisho"></div>
         <br><br>

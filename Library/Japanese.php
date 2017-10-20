@@ -102,10 +102,10 @@ class JAPANESE {
         if ($found_it) {
             $this->array_push_word("<span jukugo='$id' title='{$word['plain']} - {$word['meanings']}' class='jukugo highlight_noun'>{$okurigana}</span>");
         }
-        $this->text = str_replace($word['plain'], "[{$this->counter}]", $this->text, $found_it);
-        if ($found_it) {
-            $this->array_push_word("<span jukugo='$id' title='{$word['meanings']}' class='jukugo highlight_noun'>{$word['plain']}</span>");
-        }
+//        $this->text = str_replace($word['plain'], "[{$this->counter}]", $this->text, $found_it);
+//        if ($found_it) {
+//            $this->array_push_word("<span jukugo='$id' title='{$word['meanings']}' class='jukugo highlight_noun'>{$word['plain']}</span>");
+//        }
     }
 
     function replace_nouns($word) {
@@ -138,10 +138,10 @@ class JAPANESE {
             if ($found_it) {
                 $this->array_push_word("<span noun='$id' title='{$meaning}' class='nouns highlight_noun'>$okurigana</span>");
             }
-            $this->text = str_replace($plain, "[{$this->counter}]", $this->text, $found_it);
-            if ($found_it) {
-                $this->array_push_word("<span noun='$id' title='{$meaning}' class='nouns highlight_noun'>$plain</span>");
-            }
+//            $this->text = str_replace($plain, "[{$this->counter}]", $this->text, $found_it);
+//            if ($found_it) {
+//                $this->array_push_word("<span noun='$id' title='{$meaning}' class='nouns highlight_noun'>$plain</span>");
+//            }
         }
     }
 
@@ -530,6 +530,14 @@ class JAPANESE {
                 break;
         }
         return $extra;
+    }
+
+    static function is_jukugo($str) {
+        if (preg_match("/^\p{Han}+$/u", $str)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
