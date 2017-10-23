@@ -1,20 +1,26 @@
 <?php
-$text = $_POST['text'];
-$oJisho = new Jisho();
-$oDict = new JAPANESE($text);
-$start = strtotime(date('Y-m-d H:i:s'));
-
-$all_words = $oJisho->get_words();
+$input = $_POST['text'];
+//$oJisho = new Jisho();
+//$oDict = new JAPANESE($text);
+//$start = strtotime(date('Y-m-d H:i:s'));
+//$all_words = $oJisho->get_words();
 /**
  * nai está conjugando o verbo 1706
  */
-$oDict->analyse($all_words);
-
-
-$text = $oDict->place_words();
-$finish = strtotime(date('Y-m-d H:i:s'));
-echo $finish - $start . " segundos" . "<br><br>";
-echo $text;
+//$oDict->analyse($all_words);
+//$text = $oDict->place_words();
+//$finish = strtotime(date('Y-m-d H:i:s'));
+//echo $finish - $start . " segundos" . "<br><br>";
+//echo $text;
+$output = MECAB::mecab_it($input);
+foreach ($output as $key => $word) {
+    if (strpos($word, 'EOS') !== false) {
+        echo "<br>";
+    } else {
+        echo  " [".$word . "] ";
+    }
+    
+}
 ?>
 
 

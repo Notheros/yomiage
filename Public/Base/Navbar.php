@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top" >
+<!--<div class="navbar navbar-default navbar-fixed-top" >
     <div class="container">
         <div class="navbar-header">
             <a href="https://bootswatch.com/" class="navbar-brand">Japanese</a>
@@ -16,4 +16,4 @@
         </div>
     </div>
 
-</div>
+</div>-->
