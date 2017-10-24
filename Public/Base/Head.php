@@ -21,43 +21,44 @@
             background-color: yellow;
         }
     </style>
-    
-    
+
+
     <style type="text/css">
-    .highlight_noun {
-        background-color: yellow;
-        font-weight: bold;
-        color: black;
+        .highlight_noun {
+            background-color: yellow;
+            font-weight: bold;
+            color: black;
 
 
-    }
-    .highlight_verb {
-        background-color: greenyellow;
-        color: black;
-        font-weight: bold;
-    }
-    .highlight_adj {
-        color: black;
-        background-color: #3283ff;
-        font-weight: bold;
-    }
-    .highlight_hover{
-        background-color: #ff32ec!important;
-    }
+        }
+        .highlight_verb {
+            background-color: greenyellow;
+            color: black;
+            font-weight: bold;
+        }
+        .highlight_adj {
+            color: black;
+            background-color: #3283ff;
+            font-weight: bold;
+        }
+        .highlight_hover{
+            background-color: #ff32ec!important;
+        }
 
-    .highlight_suffix{
-        background-color: #a6e1ec;
-        color: black;
-        font-weight: bold;
-    }
+        .highlight_suffix{
+            background-color: #a6e1ec;
+            color: black;
+            font-weight: bold;
+        }
 
-</style>
-    
+    </style>
+
     <title>Bootswatch: Flatly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="Public/Styles/bootstrap.css" media="screen">
     <link rel="stylesheet" href="Public/Styles/custom.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
