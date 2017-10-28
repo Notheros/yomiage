@@ -1,6 +1,6 @@
 <?php
 
-class Application {
+class APPLICATION {
 
     private $oRota;
     private $request;
@@ -13,13 +13,8 @@ class Application {
     function init() {
         $id_valid = $this->oRota->isValid($this->request);
         if ($id_valid) {
-
                 if (!$this->isPublicRequest()) {
-
                     $logged = $this->isLogged();
-                    /**
-                     * SE ESTIVER LOGADO
-                     */
                     if ($logged) {
                         return $this->renderPrivateRequest();
                     } else {
@@ -70,6 +65,12 @@ class Application {
         $this->oRota->setRota($this->request);
         $arquivo = $this->oRota->loadView();
         return !empty($arquivo) ? $arquivo : false;
+    }
+    
+    function has_permission($id_rota) {
+        $oRota = new Rota();
+        $permission = $oRota->hasPermission($id_rota);
+        return $permission;
     }
 
 }

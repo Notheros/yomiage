@@ -40,7 +40,7 @@ spl_autoload_register("autoload");
 /**
  * INSTANCIA A CLASSE APPLICATION (FRONT CONTROLLER).
  */
-$authentication = new Application();
+$authentication = new APPLICATION();
 $request = $authentication->init();
 /**
  * SE A REQUISI��O FOR V�LIDA, INCLUI A VIEW. CASO CONTR�RIO, RETORNA PERMISSION DENIED

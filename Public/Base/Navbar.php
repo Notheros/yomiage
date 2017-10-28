@@ -1,19 +1,18 @@
-<div class="navbar navbar-default navbar-fixed-top" >
-    <div class="container">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <a href="https://bootswatch.com/" class="navbar-brand">Japanese</a>
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                <i class="glyphicon glyphicon-align-left"></i>
             </button>
         </div>
-        <div class="navbar-collapse collapse" id="navbar-main" >
-            
 
-           
-
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+            </ul>
         </div>
     </div>
-
-</div>
+</nav>

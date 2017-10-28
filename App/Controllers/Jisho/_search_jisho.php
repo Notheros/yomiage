@@ -2,7 +2,7 @@
 
 $oJisho = new Jisho();
 $user_word = $_GET['word'];
-$jisho = json_decode(Helper::get_data_from("http://jisho.org/api/v1/search/words?keyword=" . $user_word . ""), true);
+$jisho = json_decode(FUNCTIONS::get_data_from("http://jisho.org/api/v1/search/words?keyword=" . $user_word . ""), true);
 $result['verbs'] = 0;
 $result['nouns'] = 0;
 $data = $jisho['data'];
@@ -49,7 +49,7 @@ foreach ($data as $key => $value) {
     }
 }
 
-Helper::prettyPrint($result);
+FUNCTIONS::prettyPrint($result);
 
 
 

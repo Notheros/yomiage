@@ -5,7 +5,7 @@ class Jisho {
     private $conn;
 
     function __construct() {
-        $this->conn = Connection::getInstance();
+        $this->conn = CONNECTION::getInstance();
     }
 
     function get_verb_infleddddctions($verb, $dan) {
@@ -199,6 +199,12 @@ SELECT
         $query = "INSERT INTO tb_verbs (okurigana, plain, type, is_common, predication, meanings) VALUES('{$okurigana}', '{$plain}', '{$type}', '{$is_common}', '{$predication}', '{$meanings}')";
         $this->conn->executeQuery($query);
         return $this->conn->lastId();
+    }
+
+    function get_word($word) {
+        $query = "SELECT * FROM tb_jukugo WHERE jukugo = '{$word}'";
+        $this->conn->executeQuery($query);
+        return $this->conn->prox();
     }
 
 }

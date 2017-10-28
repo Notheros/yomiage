@@ -7,7 +7,7 @@ $array = $oJisho->get_jukugo_limit();
 $nope = array();
 foreach ($array as $value) {
     $url = "http://jisho.org/api/v1/search/words?keyword=" . $value['jukugo'];
-    $jisho = json_decode(Helper::get_data_from($url), true);
+    $jisho = json_decode(FUNCTIONS::get_data_from($url), true);
     $is_common = isset($jisho['data'][0]['is_common']) ? $jisho['data'][0]['is_common'] : 0;
 //    $type = $jisho['data'][0]['senses'][0]['parts_of_speech'][0];
 //    $predication = $jisho['data'][0]['senses'][0]['parts_of_speech'][1];
@@ -31,7 +31,7 @@ foreach ($array as $value) {
     }
 }
 
-Helper::prettyPrint($nope);
+FUNCTIONS::prettyPrint($nope);
 
 
 

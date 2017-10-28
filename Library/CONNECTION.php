@@ -1,6 +1,6 @@
 <?php
 
-class Connection {
+class CONNECTION {
 
     /**
      * @var Connection 

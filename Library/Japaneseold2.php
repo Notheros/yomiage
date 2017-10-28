@@ -1,6 +1,6 @@
 <?php
 
-class JAPANESE {
+class Japaneseold2 {
 
     private $words = array();
     private $counter = 0;
@@ -148,7 +148,7 @@ class JAPANESE {
     function gen_adj_inflections($adj) {
         $okurigana = $adj['word'];
         $inflections = $this->create_adj_inflections_array($okurigana);
-        Helper::sort_array_by_values_length($inflections);
+        FUNCTIONS::sort_array_by_values_length($inflections);
         $inflections['meanings'] = $adj['meanings'];
         $inflections['id'] = $adj['id'];
         return $inflections;
@@ -156,7 +156,7 @@ class JAPANESE {
 
     function gen_verbs_inflections($verb) {
         $inflections = $this->create_verb_inflections_array($verb);
-        Helper::sort_array_by_values_length($inflections);
+        FUNCTIONS::sort_array_by_values_length($inflections);
         $inflections['meanings'] = $verb['meanings'];
         $inflections['id'] = $verb['id'];
         return $inflections;
