@@ -1,9 +1,33 @@
 .particle {
     background: greenyellow;
+    color: black!important;
+}
+ruby{
+    ruby-position: over;
+    ruby-align: center;
 }
 .verb {
     background: blue;
     color: white;
+}
+.conjunction{
+    background: grey;
+    color: white; 
+}
+
+.pre_noun_adjectival{
+    background: turquoise;
+    color: black; 
+}
+
+.expression{
+    background: violet;
+    color: white;
+}
+/*ruby rt { visibility: hidden; } ruby:hover rt { visibility: visible; }*/
+rt{
+    color: white;
+    font-size: 12px;
 }
 .noun{
     background: purple;
@@ -13,10 +37,13 @@
     background: #ff3333;
     color: white;
 }
-.pre_noun_adjectival{
-    background: #d3c50a;
+
+.i_adjective {
+    background: #b490f6;
+    color: black;
 }
 .word {
     border-radius: 5px;
     margin-right: 10px;
+    color: white;
 }

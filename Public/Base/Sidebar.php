@@ -1,4 +1,4 @@
-  <!-- Sidebar Holder -->
+<!--   Sidebar Holder 
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <h3>Bootstrap Sidebar</h3>
@@ -35,4 +35,4 @@
                     <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
                     <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
                 </ul>
-            </nav>
+            </nav>-->

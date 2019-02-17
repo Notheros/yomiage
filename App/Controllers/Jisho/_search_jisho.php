@@ -1,6 +1,13 @@
 <?php
 
-$oJisho = new Jisho();
+$url = "http://jisho.org/api/v1/search/words?keyword=" . urlencode($_POST['word']);
+
+echo file_get_contents($url);
+die();
+
+
+
+//$oJisho = new Jisho();
 $user_word = $_GET['word'];
 $jisho = json_decode(FUNCTIONS::get_data_from("http://jisho.org/api/v1/search/words?keyword=" . $user_word . ""), true);
 $result['verbs'] = 0;
@@ -15,9 +22,9 @@ foreach ($data as $key => $value) {
 
     $meanings = "";
     $types = "";
-   
+
     foreach ($senses as $key => $sense) {
-      
+
         $kana_alone = 0;
         $meanings .= addslashes(implode(",", $sense['english_definitions'])) . ";";
         $types .= addslashes(implode(",", $sense['parts_of_speech'])) . ";";
@@ -33,23 +40,20 @@ foreach ($data as $key => $value) {
 //    if (strpos($types, 'Noun') !== false || strpos($types, 'noun') !== false) {
 //        
 //    }
-    if (strpos($types, ' Verb ') !== false || strpos($types, ' verb ') !== false) {
-        $result['verbs'] ++;
-        $types = $senses[0]['parts_of_speech'][0];
-        $predication = $senses[0]['parts_of_speech'][1];
-        $oJisho->insert_verb($okurigana, $plain, $types, $is_common, $predication, $meanings);
-    } else {
-        $result['others'] ++;
-        if (Japanese::is_jukugo($okurigana)) {
-            $kanji = mb_substr($okurigana, 0, 1);
-            $oJisho->insert_jukugo($kanji, $okurigana, $plain, $types, $meanings, $is_common);
-        } else {
-            $new_id = $oJisho->insert_noun($okurigana, $plain, $types, $meanings, $is_common,$kana_alone);
-        }
-    }
+//    if (strpos($types, ' Verb ') !== false || strpos($types, ' verb ') !== false) {
+//        $result['verbs'] ++;
+//        $types = $senses[0]['parts_of_speech'][0];
+//        $predication = $senses[0]['parts_of_speech'][1];
+//        $oJisho->insert_verb($okurigana, $plain, $types, $is_common, $predication, $meanings);
+//    } else {
+//        $result['others'] ++;
+//        if (Japanese::is_jukugo($okurigana)) {
+//            $kanji = mb_substr($okurigana, 0, 1);
+//            $oJisho->insert_jukugo($kanji, $okurigana, $plain, $types, $meanings, $is_common);
+//        } else {
+//            $new_id = $oJisho->insert_noun($okurigana, $plain, $types, $meanings, $is_common, $kana_alone);
+//        }
+//    }
 }
 
 FUNCTIONS::prettyPrint($result);
-
-
-

@@ -201,8 +201,14 @@ SELECT
         return $this->conn->lastId();
     }
 
+    function get_jukugo($word) {
+        $query = "SELECT plain, meanings FROM tb_jukugo WHERE jukugo = '{$word}'";
+        $this->conn->executeQuery($query);
+        return $this->conn->prox();
+    }
+
     function get_word($word) {
-        $query = "SELECT * FROM tb_jukugo WHERE jukugo = '{$word}'";
+        $query = "SELECT plain, meanings FROM tb_words WHERE okurigana= '{$word}'";
         $this->conn->executeQuery($query);
         return $this->conn->prox();
     }
