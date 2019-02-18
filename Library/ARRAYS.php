@@ -16,11 +16,13 @@ class ARRAYS {
     static function find_array_in_array($needle, $haystack) {
         $keys = array_keys($haystack, $needle[0]);
         $out = array();
+        // FUNCTIONS::prettyPrint($haystack);
         foreach ($keys as $key) {
             $add = true;
             $result = array();
             foreach ($needle as $i => $value) {
                 if (!(isset($haystack[$key + $i]) && $haystack[$key + $i] == $value)) {
+                    // echo $key + $i . ' - false';
                     $add = false;
                     break;
                 }
@@ -30,6 +32,8 @@ class ARRAYS {
                 $out[] = $result;
             }
         }
+        // print_r($out);
+
         return $out;
     }
 

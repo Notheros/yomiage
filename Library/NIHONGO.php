@@ -38,9 +38,13 @@ class NIHONGO {
     static $expressions = array(
         // array('parts' => array("よう", "に", "なる"), 'type' => '五弾'),
         array("と", "なる", "ため", "に"),
+        array("身", "を", "包み"), // colocar a conjugacao base no html5
         array("よう", "に", "なる"),
+        // array("と", "いって", "も"),
+        // array("と", "言って", "も"),
         array("に", "なる", "と"),
         array("の", "方", "が"),
+        array("の", "ほう", "が"),
         array("の", "よう", "に"),
         array("に", "なる", "と"),
         array("か", "どう", "か"),
@@ -48,8 +52,10 @@ class NIHONGO {
         array("です", "が"),
         array("より", "も"),
         array("に", "なる"),
-        array("と", "なる"),
+        // array("と", "なる"),
         array("なん", "か"),
+        array("数", "接尾"),
+
     );
     //        array("動詞", "接続助詞"),
 //        array("動詞", "助動詞"),
@@ -66,7 +72,7 @@ class NIHONGO {
         array("一段", "接尾", "ナイ"),
         array("動詞", "マス"),
         array("動詞", "接尾"),
-        array("動詞", "助詞"),
+        array("動詞", "テ"),
         array("形容詞", "助動詞"),
         array("助詞", "助動詞"),
         array("動詞", "接尾"),
@@ -198,7 +204,7 @@ class NIHONGO {
                 } else {
                     $word['type'] = "";
                 }
-                @$word['t'] = $description[4];
+                @$word['dan'] = $description[4];
                 @$word['base'] = $description[6];
 
                 array_push($words, $word);

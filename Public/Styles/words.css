@@ -26,7 +26,7 @@ ruby{
 }
 /*ruby rt { visibility: hidden; } ruby:hover rt { visibility: visible; }*/
 rt{
-    color: white;
+    color: black;
     font-size: 12px;
 }
 .noun{
@@ -45,5 +45,9 @@ rt{
 .word {
     border-radius: 5px;
     margin-right: 10px;
-    color: white;
+    /* color: white; */
+}
+
+.word:hover {
+    font-weight: bolder;
 }

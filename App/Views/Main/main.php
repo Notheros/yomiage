@@ -1,9 +1,11 @@
-<ul style="color: white">
+<ul style="color: black">
     <!--<li>Corrigir furigana das palavras</t>-->
     <li>Criar funções de conjugação de ichidan e godan</li>
 
     <li>Adicionar busca de significado em uma div</li>
     <li>Criar regra nai-de</li>
+    <li>Tooltip com o tipo (e tbm a conjugacao, caso verbo)</li>
+    <li>Destacar nomes com outra cor</li>
 
 </ul>
 
